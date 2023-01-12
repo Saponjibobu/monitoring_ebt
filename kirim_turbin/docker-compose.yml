@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  turbin_kirim:
+    build: 
+      context: ./app
+    restart: always
+    volumes:
+      - ./app:/app
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+      - /dev/ttyUSB1:/dev/ttyUSB1
+      - /dev/ttyUSBDC:/dev/ttyUSBDC
+    privileged: true
